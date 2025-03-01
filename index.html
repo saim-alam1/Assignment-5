@@ -100,7 +100,7 @@
               <div class="bg-white py-2 px-4 w-[114px] rounded-lg text-center">
                 <p class="text-[#00303C]">ShopEase</p>
               </div>
-              <h2 class=" card-title text-[#00303C]">Fix Mobile Button Issue</h2>
+              <h2 id="box-one-title" class="card-title text-[#00303C]">Fix Mobile Button Issue</h2>
 
               <div class="bg-white p-4 rounded-lg text-gray-500">
                 <p>Debug using Chrome DevTools, check for overlapping elements, and ensure onClick works properly
@@ -251,16 +251,21 @@
           </div>
         </div>
       </div>
-      <!-- Div 2 For Transaction History -->
-      <div class="w-1/5 bg-white py-6 px-8 rounded-2xl">
+      <!-- Div 2 For Activity History -->
+      <div class="w-1/5 bg-white py-6 px-4 rounded-2xl">
+        <!-- Activity History -->
         <div class="flex items-center justify-center">
           <img src="assets/activity.png" alt="Activity Image">
           <h2 class="font-bold ml-2 text-xl text-[#00303C]">Activity Log</h2>
         </div>
 
+        <!-- Activity Button -->
         <div class="flex justify-center mt-4">
           <button class="btn bg-[#3752FD] text-white rounded-lg">Clear History</button>
         </div>
+
+        <!-- History Box -->
+        <div id="history-box"></div>
       </div>
     </div>
   </main>

@@ -1,3 +1,9 @@
+// Get the id
+function getTheId(id) {
+  const input = document.getElementById(id);
+  return input;
+}
+
 // To get any text value
 function toGetText(id) {
   const input = document.getElementById(id).innerText;
