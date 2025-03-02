@@ -1,3 +1,4 @@
+// Added Date
 const date = new Date();
 const options = {
   weekday: 'short',
@@ -16,6 +17,8 @@ document.getElementById('discover-btn').addEventListener('click', function () {
 
 // Card Button Functions
 const buttons = ['box-one', 'box-two', 'box-three', 'box-four', 'box-five', 'box-six'];
+
+let buttonClick = 0;
 
 for (const button of buttons) {
   document.getElementById(button).addEventListener('click', function () {
@@ -58,11 +61,6 @@ for (const button of buttons) {
     } else if (button === 'box-five') {
       p.innerText = `You have Complete The Task ${titleTextFive} at ${new Date().toLocaleTimeString()}`;
     } else if (button === 'box-six') {
-
-      if (button === 'box-one' && button === 'box-two' && button === 'box-three' && button === 'box-four' && button === 'box-five' && button === 'box-six') {
-        alert('congrates!!! You have completed all the current task');
-      }
-
       p.innerText = `You have Complete The Task ${titleTextSix} at ${new Date().toLocaleTimeString()}`;
     }
 
@@ -75,8 +73,16 @@ for (const button of buttons) {
 
     container.appendChild(p);
 
+
+
     document.getElementById(button).disabled = true;
     document.getElementById(button).style.backgroundColor = 'gray';
+
+    buttonClick++;
+
+    if (buttonClick === buttons.length) {
+      alert('congrates!!! You have completed all the current task');
+    }
   })
 }
 
