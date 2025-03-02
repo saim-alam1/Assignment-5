@@ -1,11 +1,13 @@
-const todaysDate = new Date();
-const formate = new Intl.DateTimeFormat('en-us', {
-  dateStyle: 'full',
-})
-const output = (formate.format(todaysDate));
-
+const date = new Date();
+const options = {
+  weekday: 'short',
+  month: 'short',
+  day: 'numeric',
+  year: 'numeric',
+}
+const updatedDate = date.toLocaleString('en-us', options);
 const outputDateId = getTheId('today-date');
-outputDateId.innerText = output;
+outputDateId.innerText = updatedDate;
 
 
 const buttons = ['box-one', 'box-two', 'box-three', 'box-four', 'box-five', 'box-six'];
