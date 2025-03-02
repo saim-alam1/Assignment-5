@@ -48,7 +48,6 @@ for (const button of buttons) {
     const container = getTheId('history-box');
 
     const p = document.createElement('p');
-    // p.innerText = `You have Complete The Task ${titleText} at ${new Date().toLocaleTimeString()}`; // Here to work
 
     if (button === 'box-one') {
       p.innerText = `You have Complete The Task ${titleTextOne} at ${new Date().toLocaleTimeString()}`;
@@ -72,8 +71,6 @@ for (const button of buttons) {
     p.style.fontWeight = 'bold';
 
     container.appendChild(p);
-
-
 
     document.getElementById(button).disabled = true;
     document.getElementById(button).style.backgroundColor = 'gray';
