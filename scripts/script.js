@@ -1,218 +1,77 @@
-// Card - 1 Button
-document.getElementById('box-one').addEventListener('click', function () {
-  const navNumber = toGetText('nav-number');
-  const convertedNavNum = convertToNum(navNumber);
-
-  const taskNumber = toGetText('tasks-number');
-
-  const convertedTaskNum = convertToNum(taskNumber);
-
-  const increaseConvertedNum = convertedNavNum + 1;
-  const decreseCovertedTaskNum = convertedTaskNum - 1;
-
-  alert('Board updated Successfully');
-
-  changeText('nav-number', increaseConvertedNum);
-  changeText('tasks-number', decreseCovertedTaskNum);
-
-  const titleText = toGetText('box-one-title');
-
-  const container = getTheId('history-box');
-
-  const p = document.createElement('p');
-  p.innerText = `You have Complete The Task ${titleText} at ${new Date().toLocaleTimeString()}`;
-  p.style.marginTop = '50px';
-  p.style.color = '#00303C';
-  p.style.backgroundColor = '#ebf8ff';
-  p.style.padding = '15px';
-  p.style.borderRadius = '16px';
-  p.style.fontWeight = 'bold';
-
-  container.appendChild(p);
-
-  document.getElementById('box-one').disabled = true;
-  document.getElementById('box-one').style.backgroundColor = 'gray';
+const todaysDate = new Date();
+const formate = new Intl.DateTimeFormat('en-us', {
+  dateStyle: 'full',
 })
+const output = (formate.format(todaysDate));
 
-// Card - 2 Button
-document.getElementById('box-two').addEventListener('click', function () {
-  const navNumber = toGetText('nav-number');
-  const convertedNavNum = convertToNum(navNumber);
+const outputDateId = getTheId('today-date');
+outputDateId.innerText = output;
 
-  const taskNumber = toGetText('tasks-number');
 
-  const convertedTaskNum = convertToNum(taskNumber);
+const buttons = ['box-one', 'box-two', 'box-three', 'box-four', 'box-five', 'box-six'];
 
-  const increaseConvertedNum = convertedNavNum + 1;
-  const decreseCovertedTaskNum = convertedTaskNum - 1;
+for (const button of buttons) {
+  document.getElementById(button).addEventListener('click', function () {
+    const navNumber = toGetText('nav-number');
+    const convertedNavNum = convertToNum(navNumber);
 
-  alert('Board updated Successfully');
+    const taskNumber = toGetText('tasks-number');
 
-  changeText('nav-number', increaseConvertedNum);
-  changeText('tasks-number', decreseCovertedTaskNum);
+    const convertedTaskNum = convertToNum(taskNumber);
 
-  const titleText = toGetText('box-two-title');
+    const increaseConvertedNum = convertedNavNum + 1;
+    const decreseCovertedTaskNum = convertedTaskNum - 1;
 
-  const container = getTheId('history-box');
+    alert('Board updated Successfully');
 
-  const p = document.createElement('p');
-  p.innerText = `You have Complete The Task ${titleText} at ${new Date().toLocaleTimeString()}`;
-  p.style.marginTop = '15px';
-  p.style.color = '#00303C';
-  p.style.backgroundColor = '#ebf8ff';
-  p.style.padding = '15px';
-  p.style.borderRadius = '16px';
-  p.style.fontWeight = 'bold';
+    changeText('nav-number', increaseConvertedNum);
+    changeText('tasks-number', decreseCovertedTaskNum);
 
-  container.appendChild(p);
+    // Title Texts
+    const titleTextOne = toGetText('box-one-title');
+    const titleTextTwo = toGetText('box-two-title');
+    const titleTextThree = toGetText('box-three-title');
+    const titleTextFour = toGetText('box-four-title');
+    const titleTextFive = toGetText('box-five-title');
+    const titleTextSix = toGetText('box-six-title');
 
-  document.getElementById('box-two').disabled = true;
-  document.getElementById('box-two').style.backgroundColor = 'gray';
-})
+    const container = getTheId('history-box');
 
-// Card - 3 Button
-document.getElementById('box-three').addEventListener('click', function () {
-  const navNumber = toGetText('nav-number');
-  const convertedNavNum = convertToNum(navNumber);
+    const p = document.createElement('p');
+    // p.innerText = `You have Complete The Task ${titleText} at ${new Date().toLocaleTimeString()}`; // Here to work
 
-  const taskNumber = toGetText('tasks-number');
+    if (button === 'box-one') {
+      p.innerText = `You have Complete The Task ${titleTextOne} at ${new Date().toLocaleTimeString()}`;
+    } else if (button === 'box-two') {
+      p.innerText = `You have Complete The Task ${titleTextTwo} at ${new Date().toLocaleTimeString()}`;
+    } else if (button === 'box-three') {
+      p.innerText = `You have Complete The Task ${titleTextThree} at ${new Date().toLocaleTimeString()}`;
+    } else if (button === 'box-four') {
+      p.innerText = `You have Complete The Task ${titleTextFour} at ${new Date().toLocaleTimeString()}`;
+    } else if (button === 'box-five') {
+      p.innerText = `You have Complete The Task ${titleTextFive} at ${new Date().toLocaleTimeString()}`;
+    } else if (button === 'box-six') {
 
-  const convertedTaskNum = convertToNum(taskNumber);
+      if (button === 'box-one' && button === 'box-two' && button === 'box-three' && button === 'box-four' && button === 'box-five' && button === 'box-six') {
+        alert('congrates!!! You have completed all the current task');
+      }
 
-  const increaseConvertedNum = convertedNavNum + 1;
-  const decreseCovertedTaskNum = convertedTaskNum - 1;
+      p.innerText = `You have Complete The Task ${titleTextSix} at ${new Date().toLocaleTimeString()}`;
+    }
 
-  alert('Board updated Successfully');
+    p.style.marginTop = '50px';
+    p.style.color = '#00303C';
+    p.style.backgroundColor = '#ebf8ff';
+    p.style.padding = '15px';
+    p.style.borderRadius = '16px';
+    p.style.fontWeight = 'bold';
 
-  changeText('nav-number', increaseConvertedNum);
-  changeText('tasks-number', decreseCovertedTaskNum);
+    container.appendChild(p);
 
-  const titleText = toGetText('box-three-title');
-
-  const container = getTheId('history-box');
-
-  const p = document.createElement('p');
-  p.innerText = `You have Complete The Task ${titleText} at ${new Date().toLocaleTimeString()}`;
-  p.style.marginTop = '15px';
-  p.style.color = '#00303C';
-  p.style.backgroundColor = '#ebf8ff';
-  p.style.padding = '15px';
-  p.style.borderRadius = '16px';
-  p.style.fontWeight = 'bold';
-
-  container.appendChild(p);
-
-  document.getElementById('box-three').disabled = true;
-  document.getElementById('box-three').style.backgroundColor = 'gray';
-})
-
-// Card - 4 Button
-document.getElementById('box-four').addEventListener('click', function () {
-  const navNumber = toGetText('nav-number');
-  const convertedNavNum = convertToNum(navNumber);
-
-  const taskNumber = toGetText('tasks-number');
-
-  const convertedTaskNum = convertToNum(taskNumber);
-
-  const increaseConvertedNum = convertedNavNum + 1;
-  const decreseCovertedTaskNum = convertedTaskNum - 1;
-
-  alert('Board updated Successfully');
-
-  changeText('nav-number', increaseConvertedNum);
-  changeText('tasks-number', decreseCovertedTaskNum);
-
-  const titleText = toGetText('box-four-title');
-
-  const container = getTheId('history-box');
-
-  const p = document.createElement('p');
-  p.innerText = `You have Complete The Task ${titleText} at ${new Date().toLocaleTimeString()}`;
-  p.style.marginTop = '15px';
-  p.style.color = '#00303C';
-  p.style.backgroundColor = '#ebf8ff';
-  p.style.padding = '15px';
-  p.style.borderRadius = '16px';
-  p.style.fontWeight = 'bold';
-
-  container.appendChild(p);
-
-  document.getElementById('box-four').disabled = true;
-  document.getElementById('box-four').style.backgroundColor = 'gray';
-})
-
-// Card - 5 Button
-document.getElementById('box-five').addEventListener('click', function () {
-  const navNumber = toGetText('nav-number');
-  const convertedNavNum = convertToNum(navNumber);
-
-  const taskNumber = toGetText('tasks-number');
-
-  const convertedTaskNum = convertToNum(taskNumber);
-
-  const increaseConvertedNum = convertedNavNum + 1;
-  const decreseCovertedTaskNum = convertedTaskNum - 1;
-
-  alert('Board updated Successfully');
-
-  changeText('nav-number', increaseConvertedNum);
-  changeText('tasks-number', decreseCovertedTaskNum);
-
-  const titleText = toGetText('box-five-title');
-
-  const container = getTheId('history-box');
-
-  const p = document.createElement('p');
-  p.innerText = `You have Complete The Task ${titleText} at ${new Date().toLocaleTimeString()}`;
-  p.style.marginTop = '15px';
-  p.style.color = '#00303C';
-  p.style.backgroundColor = '#ebf8ff';
-  p.style.padding = '15px';
-  p.style.borderRadius = '16px';
-  p.style.fontWeight = 'bold';
-
-  container.appendChild(p);
-
-  document.getElementById('box-five').disabled = true;
-  document.getElementById('box-five').style.backgroundColor = 'gray';
-})
-
-// Card - 6 Button
-document.getElementById('box-six').addEventListener('click', function () {
-  const navNumber = toGetText('nav-number');
-  const convertedNavNum = convertToNum(navNumber);
-
-  const taskNumber = toGetText('tasks-number');
-
-  const convertedTaskNum = convertToNum(taskNumber);
-
-  const increaseConvertedNum = convertedNavNum + 1;
-  const decreseCovertedTaskNum = convertedTaskNum - 1;
-
-  alert('Board updated Successfully');
-
-  changeText('nav-number', increaseConvertedNum);
-  changeText('tasks-number', decreseCovertedTaskNum);
-
-  const titleText = toGetText('box-six-title');
-
-  const container = getTheId('history-box');
-
-  const p = document.createElement('p');
-  p.innerText = `You have Complete The Task ${titleText} at ${new Date().toLocaleTimeString()}`;
-  p.style.marginTop = '15px';
-  p.style.color = '#00303C';
-  p.style.backgroundColor = '#ebf8ff';
-  p.style.padding = '15px';
-  p.style.borderRadius = '16px';
-  p.style.fontWeight = 'bold';
-
-  container.appendChild(p);
-
-  document.getElementById('box-six').disabled = true;
-  document.getElementById('box-six').style.backgroundColor = 'gray';
-})
+    document.getElementById(button).disabled = true;
+    document.getElementById(button).style.backgroundColor = 'gray';
+  })
+}
 
 // Clearing Activity Log
 document.getElementById('clear-btn').addEventListener('click', function () {
