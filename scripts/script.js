@@ -9,7 +9,12 @@ const updatedDate = date.toLocaleString('en-us', options);
 const outputDateId = getTheId('today-date');
 outputDateId.innerText = updatedDate;
 
+// Discover Card
+document.getElementById('discover-btn').addEventListener('click', function () {
+  window.location.href = './discover.html';
+})
 
+// Card Button Functions
 const buttons = ['box-one', 'box-two', 'box-three', 'box-four', 'box-five', 'box-six'];
 
 for (const button of buttons) {
@@ -61,7 +66,7 @@ for (const button of buttons) {
       p.innerText = `You have Complete The Task ${titleTextSix} at ${new Date().toLocaleTimeString()}`;
     }
 
-    p.style.marginTop = '50px';
+    p.style.marginTop = '25px';
     p.style.color = '#00303C';
     p.style.backgroundColor = '#ebf8ff';
     p.style.padding = '15px';
