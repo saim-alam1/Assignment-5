@@ -213,3 +213,9 @@ document.getElementById('box-six').addEventListener('click', function () {
   document.getElementById('box-six').disabled = true;
   document.getElementById('box-six').style.backgroundColor = 'gray';
 })
+
+// Clearing Activity Log
+document.getElementById('clear-btn').addEventListener('click', function () {
+  const historyBox = getTheId('history-box');
+  historyBox.innerHTML = '';
+});

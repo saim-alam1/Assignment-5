@@ -252,7 +252,7 @@
         </div>
       </div>
       <!-- Div 2 For Activity History -->
-      <div class="w-1/5 bg-white py-6 px-4 rounded-2xl">
+      <div id="activity-container" class="w-1/5 bg-white py-6 px-4 rounded-2xl">
         <!-- Activity History -->
         <div class="flex items-center justify-center">
           <img src="assets/activity.png" alt="Activity Image">
@@ -261,11 +261,11 @@
 
         <!-- Activity Button -->
         <div class="flex justify-center mt-4">
-          <button class="btn bg-[#3752FD] text-white rounded-lg">Clear History</button>
+          <button id="clear-btn" class="btn bg-[#3752FD] text-white rounded-lg">Clear History</button>
         </div>
 
         <!-- History Box -->
-        <div id="history-box"></div>
+        <div id="history-box" class="beep-msz"></div>
       </div>
     </div>
   </main>
